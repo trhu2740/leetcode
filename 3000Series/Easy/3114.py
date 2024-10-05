@@ -10,6 +10,8 @@ You have to replace all the "?" characters in s with digits such that the time w
 Return the resulting string.
 """
 
+import unittest
+
 
 class Solution:
     def findLatestTime(self, s: str) -> str:
@@ -37,6 +39,20 @@ class Solution:
         return "".join(sList)
 
 
+class TestCases(unittest.TestCase):
+    def test(self):
+        sol = Solution()
+        with self.subTest():
+            assert sol.findLatestTime("??:1?") == "11:19"
+        with self.subTest():
+            assert sol.findLatestTime("11:5?") == "11:59"
+        assertTrue()
+
+
+def assertTrue():
+    print("Test cases passed ✅")
+
+
 if __name__ == "__main__":
-    sol = Solution()
-    print(sol.findLatestTime("??:1?"))
+    tests = TestCases()
+    tests.test()
